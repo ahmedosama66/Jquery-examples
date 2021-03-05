@@ -1,0 +1,246 @@
+<html>
+    <head>
+        <title>Crat Task</title>
+        <style>
+            @font-face{
+                src:url("Ubuntu-Regular.ttf");
+                    font-family : myfont;
+            }
+            body{
+                margin: 0;
+                padding: 0;
+                font-family: myfont;
+            }
+            #header{
+                width: 100%;
+                height: 60px;
+                background-color: #ffffff;
+                box-shadow: 0px 0px 10px gray;
+                position: fixed;
+            }
+            h1{
+                font-size: 25px;
+                padding-bottom: 20px;
+                float: left;
+                padding-left: 10px;
+                letter-spacing: 3px;
+            }
+            .cartimg{
+                width: 40px;
+                height: auto;
+                float: right;
+                padding: 10px;
+                padding-right: 30px;
+            }
+            .cart{
+                position: relative;
+            }
+            ul{
+                list-style: none;
+                padding: 0;
+                box-shadow: 0px 1px 0px 0px black;
+                position: absolute;
+                top: 43;
+                right: 20;
+                background-color: #ffffff;
+                width: 300px;
+                height: auto;
+                padding: 10px;
+                display: none;
+            }
+            ul li img{
+                width: 50px;
+                height: 50px;
+                float: left;
+                padding-right: 10px;
+            }
+            .tot{
+                font-weight: bold;
+            }
+            
+            #banner{
+                width: 100%;
+                height: auto;
+            }
+            #banner img{
+                background-size: cover;
+                margin-top: 60px;
+                width: 100%;
+            }
+            #main{
+                width: 100%;
+                height: 800px;
+            }
+            #main h2{
+                padding: 20px 0 0 20px;
+                text-align: center;
+            }
+            #main hr{
+                width: 50%;
+            }
+            .proimg{
+                width: 280px;
+                height: 180px;
+                padding-bottom: 30px;
+            }
+            .pro{
+                float: left;
+                width: 300px;
+                height: 350px;
+                margin-top: 20px;
+                margin-left: 13px;
+                border-radius: 5px;
+                box-shadow: 0px 0px 10px gray;
+                padding: 10px;
+            }
+            .proprice{
+                font-weight: bold;
+            }
+            button{
+                float: right;
+                width: 100px;
+                height: 40px;
+                background-color: #525d69;
+                border: none;
+                color : #ffffff;
+                cursor: pointer;
+            }
+            button:hover{
+                background-color: #8d989e;
+                color : black;
+            }
+        
+        </style>
+    </head>
+    <body>
+    <div id="header">
+        <h1>Gaming Souq</h1>
+        <div class = "cart">
+            <img class="cartimg" src="images/cart.png">
+            <ul>
+                <li>total : <span class="tot">0</span><button class = "clear">Empty</button></li>
+            </ul>
+        </div>
+    </div>
+    <div id="banner">
+        <img src ="images/banner.jpg">
+    </div>
+    <div id="main">
+        <h2>Products</h2>
+        <hr>
+        <div class = "pro pro1">
+            <img class ="proimg" src = "images/1.jpg">
+            <h3>Playstation 4 – white 500 GB with joystick</h3>
+            <span class = "proprice">6200</span>
+            <button>Buy</button>
+            <input type="number" value="0" hidden="">
+        </div>
+        <div class = "pro pro2">
+            <img class ="proimg" src = "images/2.jpg">
+            <h3>playstation 4 slim – gold 500 GB with joystick</h3>
+            <span class = "proprice">6500</span>
+            <button>Buy</button>
+            <input type="number" value="0" hidden="">
+        </div>
+        <div class = "pro pro3">
+            <img class ="proimg" src = "images/3.jpg">
+            <h3>Sony PlayStation 4 Controller – Black</h3>
+            <span class = "proprice">1250</span>
+            <button>Buy</button>
+            <input type="number" value="0" hidden="">
+        </div>
+        <div class = "pro pro4">
+            <img class ="proimg" src = "images/4.jpg">
+            <h3>Sony PlayStation 4 Controller – Blue</h3>
+            <span class = "proprice">1500</span>
+            <button>Buy</button>
+            <input type="number" value="0" hidden="">
+        </div>
+    </div>
+    
+    
+    <script src="jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(".cartimg").click(function(){
+                $("ul").slideToggle(300)
+            })
+            
+            $(".pro1 button").click(function(){
+                var price = $(".pro1 .proprice").html()
+                var oldp = $(".tot").html()
+                var newp = Number(oldp) + Number(price)
+                $(".tot").html(newp);
+                var pname = $(".pro1 h3").html()
+                
+                var x = $(".pro1 input").val()
+                var intx= Number(x)
+                if (x == 0){
+                    $(".pro1 input").val(1)
+                    $("ul").prepend("<li class = 'nli'><img src='images/1.jpg'>"+ pname +"<br>"+ price +" L.E<br> count : <span class='count'>1</span><hr></li>")
+                }if (x > 0){
+                    $(".count").html(intx + 1)
+                    $(".pro1 input").val(intx + 1)
+                }
+            })
+            $(".pro2 button").click(function(){
+                var price = $(".pro2 .proprice").html()
+                var oldp = $(".tot").html()
+                var newp = Number(oldp) + Number(price)
+                $(".tot").html(newp);
+                var pname = $(".pro2 h3").html()
+                
+                var x = $(".pro2 input").val()
+                var intx= Number(x)
+                if (x == 0){
+                    $(".pro2 input").val(1)
+                    $("ul").prepend("<li class = 'nli'><img src='images/2.jpg'>"+ pname +"<br>"+ price +" L.E<br> count : <span class='count2'>1</span><hr></li>")
+                }if (x > 0){
+                    $(".count2").html(intx + 1)
+                    $(".pro2 input").val(intx + 1)
+                }
+            })
+            $(".pro3 button").click(function(){
+                var price = $(".pro3 .proprice").html()
+                var oldp = $(".tot").html()
+                var newp = Number(oldp) + Number(price)
+                $(".tot").html(newp);
+                var pname = $(".pro3 h3").html()
+                
+                var x = $(".pro3 input").val()
+                var intx= Number(x)
+                if (x == 0){
+                    $(".pro3 input").val(1)
+                    $("ul").prepend("<li class = 'nli'><img src='images/3.jpg'>"+ pname +"<br>"+ price +" L.E<br> count : <span class='count3'>1</span><hr></li>")
+                }if (x > 0){
+                    $(".count3").html(intx + 1)
+                    $(".pro3 input").val(intx + 1)
+                }
+            })
+            $(".pro4 button").click(function(){
+                var price = $(".pro4 .proprice").html()
+                var oldp = $(".tot").html()
+                var newp = Number(oldp) + Number(price)
+                $(".tot").html(newp);
+                var pname = $(".pro4 h3").html()
+                
+                var x = $(".pro4 input").val()
+                var intx= Number(x)
+                if (x == 0){
+                    $(".pro4 input").val(1)
+                    $("ul").prepend("<li class = 'nli'><img src='images/4.jpg'>"+ pname +"<br>"+ price +" L.E<br> count : <span class='count4'>1</span><hr></li>")
+                }if (x > 0){
+                    $(".count4").html(intx + 1)
+                    $(".pro4 input").val(intx + 1)
+                }
+            })
+            $(".clear").click(function(){
+                $(".nli ").remove()
+                $("input").val(0)
+                $(".tot").html(0)
+            })
+        })
+    </script>
+    
+    </body>
+</html>

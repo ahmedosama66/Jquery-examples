@@ -1,0 +1,58 @@
+<html>
+<head>
+  <title></title>
+ <style>
+/*
+  .x{
+   background-color: red;
+  }
+  .y{
+   background-color: yellow;
+  }
+*/
+ div{
+   background-color: black;
+   width: 20px;
+   height: 60px;
+   float: left;
+  }
+ </style>
+ </head>
+ <body>
+ 
+ 
+<!-- <button> ok </button>-->
+  
+ <div></div>
+ 
+ <script src="jquery.min.js"></script>
+  <script>
+   
+   setInterval(function(){
+    $("body").append("<div></div>")
+   },100)
+   
+   
+//  setInterval(function(){
+//   var x = new Date();
+//   var h = x.getHours();
+//   var m = x.getMinutes();
+//   var s = x.getSeconds();
+//   $("p").html( h + ":" + m + ":" + s)
+//  },1000)
+//---------------------------------
+//   $(document).ready(function(){
+//    $("button").click(function(){
+//     $("body").addClass("x")
+//     $("body").removeClass("y")
+//    })
+//    $("button").dblclick(function(){
+//     $("body").removeClass("x")
+//     $("body").addClass("y")
+//    })
+//   })
+  
+  </script>
+ 
+ </body>
+</html>

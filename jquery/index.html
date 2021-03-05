@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>test</title>
+</head>
+<style>
+
+</style>
+<body>
+	<h1 class="x">Hello!</h1>
+	<h1>ahmed</h1>
+	<h1>mohamed</h1>
+	<h1>ibrahim</h1>
+	<br>
+	<button>Stop</button>
+	<script src="jquery-3.4.1.min.js"></script>
+	<script>
+		// $(document).ready(function(){
+		// 	$("h1").click(function(){
+		// 		$("h1").hide("slow")
+		// 	})
+		// })
+
+		// $(document).ready(function(){
+		// 	$("h1").click(function(){
+		// 		$(this).hide("slow")
+		// 		$("h1").not(this).show("slow")
+
+		// 	})
+		// })
+
+		$(document).ready(function(){
+			$("h1").click(function(){
+				$(this).animate({marginLeft: '400px'},4000)
+
+			})
+
+			$("button").click(function(){
+				$("h1").stop()
+			})
+		})
+
+
+	</script>
+</body>
+</html>

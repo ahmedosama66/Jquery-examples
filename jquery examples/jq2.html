@@ -1,0 +1,124 @@
+<html>
+	<head>
+		<title> Jq2 </title>
+        <style>
+        .hide
+        {display: none}
+    
+    </style>
+	</head>
+	<body>
+		
+        
+        <input type="password">
+        
+        
+	    <button class="show">show</button>
+        <button class="hide">hide</button>
+ 
+<!--
+		<input class="a" type="text">
+		<input class="b" type="text">
+		<input class="c" type="text">
+-->
+
+<!--		<img src="../images/1.jpg">-->
+<!--		<button>show</button>-->
+<!--		<p></p>-->
+		<script src="jquery.min.js"></script>
+		<script>
+			
+        $(document).ready(function(){
+            $(".show").click(function(){
+            $("input").attr("type","text")       
+            $(this).hide()
+            $(".hide").show()
+            
+        })
+        
+           $(".hide").click(function(){
+           $("input").attr("type","password")       
+           $(this).hide()
+           $(".show").show()
+            
+        })
+    })
+    
+//	..................................................		
+//			$(document).ready(function(){
+//				
+//				$("button").click(function(){
+//				var a = $("button").html()
+//				
+//				if(a == "show")
+//				{
+//					$("button").html("hide")
+//					$("input").attr("type","text")	
+//				}
+//				
+//				if(a == "hide")
+//				{
+//					$("button").html("show")
+//					$("input").attr("type","password")	
+//				}
+//					
+//				})
+//			})
+//	...........................................
+//			$(document).ready(function(){
+//				$("input").keyup(function(){
+//					var x = $(".a").val()
+//					var y = $(".b").val()
+//					var z = $(".c").val()
+//					$("p").html(x)
+//					$("p").attr("style","font-size:"+y+"px;color:"+z)
+//				})
+//
+//			})
+//			
+//			..................................
+//			$(document).ready(function(){
+//				$("input").keyup(function(){
+//					var x = $("input").val()
+//					$("p").html(x.length)
+//					if(x.length>=5)
+//					   {
+//					   		$("input").attr("style","color:red")
+//					   }
+//					if(x.length<5)
+//					   {
+//					   		$("input").attr("style","color:blue")
+//					   }
+//					
+//				})
+//			})
+//	..................................		
+//			
+//			$(document).ready(function(){
+//				$("button").click(function(){
+//		get			var x = $(".a").val()
+//		get			var z = $(".b").val()
+//		set			$("img").attr("style","width:"+x+"px;height:"+z+"px")
+//				})
+//			})
+//	.................................
+//		get         var e = $("p").html()
+            
+		</script>
+        
+        <!--    
+get 
+var x = $("p").html()
+var x = $("input").val()
+var x = $("img").attr("title")
+
+===================
+set
+         var x = $("button").html("ahmed")
+
+  $("input").val("ahmed")
+$("img").attr("title","xxx")
+
+-->
+	</body>
+</html>

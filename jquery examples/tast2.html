@@ -1,0 +1,25 @@
+<html>
+<head>
+    <title>task2 JQ</title>
+</head>
+    <body>
+    
+    <input type="text">
+    
+    
+    
+    
+    <script src="jquery.min.js"></script>
+        <script>
+        
+        $(document).ready(function(){
+            $("input").keyup(function(){
+                var x = $("input").val()
+                var txt = x.replace("hell","****")
+                $("input").val(txt)
+            })
+        })
+
+        </script>
+    </body>
+</html>

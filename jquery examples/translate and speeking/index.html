@@ -1,0 +1,112 @@
+<html lang="en">
+<header>
+    <title></title>
+    <meta charset="utf-8">
+</header>
+    <style>
+        @font-face{
+            src:url(Almarai.ttf);
+                font-family : font;
+        }
+        *{
+            font-family: font;
+        }
+        body{
+            background-color: #D5DBDB;
+        }
+        .text{
+            width: 95%;
+            height: 300px;
+            margin: auto;
+            margin-top: 50px;
+        }
+        p{
+            width: 100%;
+            height: 100%;
+            overflow: scroll;
+            background-color:#F0F3F4;
+            box-shadow: 0px 0px 10px gray;
+            font-size: 20px;
+            padding: 10px;
+            text-align: center;
+            line-height: 30px;
+        }
+        button , select{
+            width: 70px;
+            height: 40px;
+            background-color: #273746;
+            font-size: 16px;
+            border-radius: 5px;
+            border: none;
+            color: white;
+        }
+        select {
+            width: 155px;
+        }
+        button:active , button:focus{
+            outline: none;
+            border: 2px solid #fff;
+        }
+        .play:hover , .play:focus{
+            background-color: #2ECC71;
+        }
+        .pause:hover , .pause:focus{
+            background-color: #F4D03F;
+        }
+        .resume:hover , .resume:focus{
+            background-color: #2ECC71;
+        }
+        .cancel:hover , .cancel:focus{
+            background-color: #E74C3C;
+        }
+    </style>
+    <body>
+    <h1 style = "text-align: center; margin-top: 50px;">Translate and speaking app</h1>
+    <div class="text">
+        <p>Reading develops the mind of the reader and enables him to gain experience in various aspects of life. Reading is a tool for acquiring all sciences and various skills, especially since conscious reading benefits the individual and society in general, as it benefits the individual with the knowledge he acquires and the sciences he accesses, and it also improves his way of thinking and corrects his erroneous views sometimes, which will positively reflect on his life in general, in addition to That it improves the skill of expressing his thoughts and communicating with people, thus improving his written performance in the end, and since any society consists of a group of individuals, its rise or decline depends on the culture of these individuals or their ignorance, and accordingly, the reading society will necessarily be a sophisticated society in which the generosity of morals are spread, and in which it is known. Individuals have their rights and duties, and it is prosperous with their knowledge and knowledge.</p>
+        <select>
+            <option value = "UK English Male">UK English Male</option>
+            <option value = "UK English Female">UK English Female</option>
+            <option value = "Arabic Male">Arabic Male</option>
+            <option value = "Arabic Female">Arabic Female</option>
+        </select>
+        <button class = "play">Play</button>
+        <button class="pause">Pause</button>
+        <button class="resume">Resume</button>
+        <button class="cancel">Cancel</button>
+        <div id="google_translate_element" style = "float: right; margin: 0;"></div>
+    </div>
+    
+
+    
+    <script src="jquery.min.js"></script>
+    <script src="responsivevoice.js"></script>
+    <script src="http://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script>
+        function googleTranslateElementInit() { new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element'); }
+    </script>
+    <script>
+        $(document).ready(function(){
+            $(".play").click(function(){
+                var sel_voice = $("select").val()
+                var text = $("p").text()
+                responsiveVoice.speak(text,sel_voice);
+            })
+            
+            $(".pause").click(function(){
+                responsiveVoice.pause();
+            })
+            
+            $(".resume").click(function(){
+                responsiveVoice.resume();
+            })
+            
+            $(".cancel").click(function(){
+                responsiveVoice.cancel();
+            })
+        })
+    
+        
+    </script>
+    </body>
+</html>

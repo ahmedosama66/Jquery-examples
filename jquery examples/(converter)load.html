@@ -1,0 +1,47 @@
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+    <input type ="number" value = "1"><button>convert</button>
+    <br>
+    <br>
+    <table border="1" cellpadding = "10">
+        <tr>
+            <td>العملة</td>
+            <td>سعر الصرف</td>
+        </tr>
+        <tr>
+            <td>USD-دولار امريكي</td>
+            <td class ="usd"></td>
+        </tr>
+        <tr>
+            <td>SAR- ريال سعودي</td>
+            <td class ="sar"></td>
+        </tr>
+        <tr>
+            <td>UAE - درهم اماراتي</td>
+            <td class ="aed"></td>
+        </tr>
+    
+    </table>
+    
+    <script src ="jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("button").click(function(){
+                
+                setInterval(function(){
+                    var f = $("input").val();
+                    $(".usd").load("https://valuta.exchange/ar/egp-to-usd?amount="+f+" .Converter__ToContainer-ah6o35-3 .CurrencyInput-sc-46bpxp-0")
+                    $(".sar").load("https://valuta.exchange/ar/egp-to-sar?amount="+f+" .Converter__ToContainer-ah6o35-3 .CurrencyInput-sc-46bpxp-0")
+                    $(".aed").load("https://valuta.exchange/ar/egp-to-aed?amount="+f+" .Converter__ToContainer-ah6o35-3 .CurrencyInput-sc-46bpxp-0")
+                    $(".Converter__ToContainer-ah6o35-3 .CurrencyInput-sc-46bpxp-0").fadeOut("slow")
+                },2000)
+                
+            })
+        })
+    
+    </script>
+</body>
+</html>

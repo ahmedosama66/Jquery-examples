@@ -1,0 +1,30 @@
+<html>
+<head>
+    <title>task3 JQ</title>
+</head>
+    <body>
+    
+    <input type="text">
+    <button>sing in</button>
+    
+    
+    
+    <script src="jquery.min.js"></script>
+        <script>
+        
+        $(document).ready(function(){
+            $("button").click(function(){
+                var txt = $("input").val();
+                var e = "@gmail.com";
+                if (txt == e){
+                    $("input").val(txt);
+                }else{
+                    $("input").val(txt + e);
+                }
+                
+            })
+        })
+
+        </script>
+    </body>
+</html>
